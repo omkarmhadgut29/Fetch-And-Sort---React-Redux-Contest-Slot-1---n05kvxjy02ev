@@ -42,11 +42,11 @@ const App = () => {
                     : "Sort by name length (descending)"}
             </button>
             {isLoading && <p>Loading...</p>}
-            {users.length > 0 &&
-                users.map((user) => {
-                    return (
-                        <div className="users-section" key={user.id}>
-                            <li>
+            <div className="users-section">
+                {users.length > 0 &&
+                    users.map((user) => {
+                        return (
+                            <li key={user.id}>
                                 <section className="id-section">
                                     {user.id}
                                 </section>
@@ -55,9 +55,9 @@ const App = () => {
                                     <p className="email">Email: {user.email}</p>
                                 </section>
                             </li>
-                        </div>
-                    );
-                })}
+                        );
+                    })}
+            </div>
         </div>
     );
 };
